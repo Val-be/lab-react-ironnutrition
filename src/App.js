@@ -30,7 +30,7 @@ function App() {
         {/* Render the list of Food Box components here */}
         {foodList
           .filter((food) => {
-            return food.name.includes(search);
+            return food.name.toLowerCase().includes(search);
           })
           .map((e, i) => {
             return <FoodBox food={e} key={i} deleteFood={deleteFood} i={i} />;
