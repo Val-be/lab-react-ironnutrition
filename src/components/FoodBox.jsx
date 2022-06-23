@@ -1,11 +1,7 @@
-// Style Guide:
-// In this file you can find a reference example of the structure
-// and content that the component should render.
-// Remember to import Ant Design components before using them.
 import { Card, Col, Button } from 'antd';
 
 // Iteration 2
-function FoodBox(food) {
+function FoodBox({food, deleteFood, i}) {
   return (
     <Col>
       <Card title={food.name} style={{ width: 230, height: 300, margin: 10 }}>
@@ -15,7 +11,7 @@ function FoodBox(food) {
         <p>
           <b>Total Calories: {food.calories * food.servings} </b> kcal
         </p>
-        <Button type="primary"> Delete </Button>
+        <Button type="primary" onClick={() => {deleteFood(i)}}> Delete </Button>
       </Card>
     </Col>
   );
